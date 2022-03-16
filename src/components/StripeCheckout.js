@@ -73,7 +73,7 @@ const CheckoutForm = () => {
     ev.preventDefault()
     setProcessing(true)
     const payload = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: { card: elements.getElement(cardElement) },
+      payment_method: { card: elements.getElement(CardElement) },
     })
     if (payload.error) {
       setError(`Payment failed ${payload.error.message}`)
